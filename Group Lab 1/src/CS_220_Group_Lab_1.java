@@ -21,7 +21,7 @@ public class CS_220_Group_Lab_1 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        System.out.print("Enter the name of the file containing the grid: ");
+        System.out.print("Enter the path of the file containing the grid: ");
         String filename = sc.nextLine();
 
         ArrayList<String> fileLines = new ArrayList<>();
