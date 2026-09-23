@@ -7,8 +7,17 @@ import java.util.ArrayList;
  * Reads a grid of characters from a text file and allows the user to search
  * for specific words in all eight directions (horizontal, vertical, and diagonal).
  *
+ * Project Contributions
+ * - Joshua Castro: Main program loop, file reading/parsing, and overall integration.
+ * - Preston Battle: Directional search algorithm (horizontal, vertical, and diagonal).
+ * - Jack Martin: Debugging, error handling, and testing.
+ * - Zach Baird: Graphical User Interface (UI) implementation.
+ *
  * @author Joshua Castro
- * @version 1.1
+ * @author Preston Battle
+ * @author Jack Martin
+ * @author Zach Baird
+ * @version 1.3
  */
 public class CS_220_Group_Lab_1 {
     /**
@@ -20,7 +29,7 @@ public class CS_220_Group_Lab_1 {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-
+        
         System.out.print("Enter the name of the file containing the grid: ");
         String filename = sc.nextLine();
 
@@ -65,7 +74,7 @@ public class CS_220_Group_Lab_1 {
 
         boolean playing = true;
         while (playing) {
-            System.out.println("\nPlease enter your guess:");
+            System.out.println("\nPlease enter the work you'd like to search:");
             String guess = sc.nextLine().toUpperCase();
 
             boolean found = false;
@@ -85,7 +94,7 @@ public class CS_220_Group_Lab_1 {
                 System.out.println("Wrong! The word '" + guess + "' is not in the grid.");
             }
 
-            System.out.print("Would you like to search for another word? (Y/N): ");
+            System.out.print("Would you like to search for another word? (y/n): ");
             String response = sc.nextLine();
             if (!response.equalsIgnoreCase("Y")) {
                 playing = false;
