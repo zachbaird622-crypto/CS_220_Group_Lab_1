@@ -8,7 +8,7 @@ import java.util.ArrayList;
  * for specific words in all eight directions (horizontal, vertical, and diagonal).
  *
  * @author Joshua Castro
- * @version 1.0
+ * @version 1.1
  */
 public class CS_220_Group_Lab_1 {
     /**
@@ -21,7 +21,7 @@ public class CS_220_Group_Lab_1 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        System.out.print("Enter the path of the file containing the grid: ");
+        System.out.print("Enter the name of the file containing the grid: ");
         String filename = sc.nextLine();
 
         ArrayList<String> fileLines = new ArrayList<>();
@@ -29,7 +29,7 @@ public class CS_220_Group_Lab_1 {
         try {
             Scanner fileScan = new Scanner(new File(filename));
             while (fileScan.hasNextLine()) {
-                String line = fileScan.nextLine().trim();
+                String line = fileScan.nextLine().replace(" ","".trim());
                 if (!line.isEmpty()) {
                     fileLines.add(line);
                 }
